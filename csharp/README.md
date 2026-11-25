@@ -41,15 +41,15 @@ Build from the directory containing `handler/`.
 To use the release source instead, replace the NuGet package reference with a project reference:
 
 ```bash
-git clone --branch v0.1.2 --depth 1 https://github.com/jona62/TaskDaemon-Handlers.git vendor/TaskDaemon-Handlers
+git clone --branch v0.1.2 --depth 1 https://github.com/jona62/taskdaemon-sdks.git vendor/taskdaemon-sdks
 dotnet remove handler/handler.csproj package TaskDaemon.Handler
-dotnet add handler/handler.csproj reference vendor/TaskDaemon-Handlers/csharp/TaskDaemon/TaskDaemon.Handler.csproj
+dotnet add handler/handler.csproj reference vendor/taskdaemon-sdks/csharp/TaskDaemon/TaskDaemon.Handler.csproj
 ```
 
 For this source installation, add the following line to the Docker builder stage before `dotnet publish`, and build from the directory containing both `handler/` and `vendor/`:
 
 ```dockerfile
-COPY vendor/TaskDaemon-Handlers/csharp/TaskDaemon ./vendor/TaskDaemon-Handlers/csharp/TaskDaemon
+COPY vendor/taskdaemon-sdks/csharp/TaskDaemon ./vendor/taskdaemon-sdks/csharp/TaskDaemon
 ```
 
 ## Package verification and publication

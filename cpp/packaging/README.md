@@ -28,7 +28,7 @@ Version `0.1.2` is [submitted upstream](https://github.com/microsoft/vcpkg/pull/
 To submit a curated port:
 
 1. Publish an immutable SDK `v0.1.2` source tag after release verification.
-2. Replace the overlay's local `SOURCE_PATH` with `vcpkg_from_github` using `REPO jona62/TaskDaemon-Handlers`, the release tag or exact commit, and the downloaded archive's actual SHA512. Configure from the archive's `cpp/` subdirectory.
+2. Replace the overlay's local `SOURCE_PATH` with `vcpkg_from_github` using `REPO jona62/taskdaemon-sdks`, the release tag or exact commit, and the downloaded archive's actual SHA512. Configure from the archive's `cpp/` subdirectory.
 3. Run vcpkg manifest formatting, installation, the installed consumer test, and supported-platform CI. Add the port's version database entry using the current vcpkg contributor workflow.
 4. Submit the port to `microsoft/vcpkg` for maintainer review. The port is publicly available from the curated registry only after acceptance; this process is not a token-based package upload.
 

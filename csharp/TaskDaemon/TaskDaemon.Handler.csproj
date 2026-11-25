@@ -7,8 +7,8 @@
     <Authors>Jonathan James</Authors>
     <Description>TaskDaemon handler SDK for C#</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/jona62/TaskDaemon-Handlers/tree/main/csharp</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/jona62/TaskDaemon-Handlers.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/jona62/taskdaemon-sdks/tree/main/csharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/jona62/taskdaemon-sdks.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>taskdaemon;handler;queue;stdio</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>

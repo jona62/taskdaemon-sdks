@@ -18,12 +18,12 @@
   "author": "Jonathan James",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jona62/TaskDaemon-Handlers.git",
+    "url": "git+https://github.com/jona62/taskdaemon-sdks.git",
     "directory": "nodejs"
   },
-  "homepage": "https://github.com/jona62/TaskDaemon-Handlers/tree/main/nodejs#readme",
+  "homepage": "https://github.com/jona62/taskdaemon-sdks/tree/main/nodejs#readme",
   "bugs": {
-    "url": "https://github.com/jona62/TaskDaemon-Handlers/issues"
+    "url": "https://github.com/jona62/taskdaemon-sdks/issues"
   },
   "publishConfig": {
     "access": "public",
