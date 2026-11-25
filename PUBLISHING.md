@@ -2,7 +2,7 @@
 
 The coordinated package version is `0.1.2`. Package preparation and registry publication are separate steps: a successful local build or GitHub source release does not mean a package is available from a language registry.
 
-The [source release](https://github.com/jona62/TaskDaemon-Handlers/releases/tag/v0.1.2) contains the tested distribution artifacts and checksums. Go `v0.1.2`, [npm `@taskdaemon/handler` 0.1.2](https://www.npmjs.com/package/@taskdaemon/handler/v/0.1.2), [crates.io `taskdaemon-handler` 0.1.2](https://crates.io/crates/taskdaemon-handler/0.1.2), [Maven Central `io.github.jona62:handler` 0.1.2](https://repo.maven.apache.org/maven2/io/github/jona62/handler/0.1.2/), and [NuGet `TaskDaemon.Handler` 0.1.2](https://www.nuget.org/packages/TaskDaemon.Handler/0.1.2) are published and verified with isolated consumers. The Python update remains pending; PyPI `taskdaemon` 0.1.0 remains available.
+The [source release](https://github.com/jona62/taskdaemon-sdks/releases/tag/v0.1.2) contains the tested distribution artifacts and checksums. Go `v0.1.2`, [npm `@taskdaemon/handler` 0.1.2](https://www.npmjs.com/package/@taskdaemon/handler/v/0.1.2), [crates.io `taskdaemon-handler` 0.1.2](https://crates.io/crates/taskdaemon-handler/0.1.2), [Maven Central `io.github.jona62:handler` 0.1.2](https://repo.maven.apache.org/maven2/io/github/jona62/handler/0.1.2/), and [NuGet `TaskDaemon.Handler` 0.1.2](https://www.nuget.org/packages/TaskDaemon.Handler/0.1.2) are published and verified with isolated consumers. The Python update remains pending; PyPI `taskdaemon` 0.1.0 remains available.
 
 The first npm upload requires a token with publishing access and **Bypass two-factor authentication**. crates.io requires a verified account email. Maven Central requires both its publishing token pair and a PGP signing key. Credentials stored in GitHub do not satisfy these separate registry prerequisites by themselves.
 
@@ -27,7 +27,7 @@ After checks pass, create the immutable `v0.1.2` and `go/v0.1.2` tags at the ver
 All GitHub trusted-publisher configurations use:
 
 - Repository owner: `jona62`
-- Repository: `TaskDaemon-Handlers`
+- Repository: `taskdaemon-sdks`
 - Workflow filename: `publish-packages.yml`
 
 Use the environment listed below when the registry asks for it.
@@ -40,18 +40,18 @@ Use the environment listed below when the registry asks for it.
 | NuGet | `nuget` | Register a policy allowing new packages and versions for `TaskDaemon.Handler`, then set repository variable `NUGET_USER`; alternatively set `NUGET_API_KEY` |
 | Maven Central | `maven-central` | Set `CENTRAL_USERNAME`, `CENTRAL_PASSWORD`, and `MAVEN_GPG_KEY`; add the passphrase/fingerprint variables when needed |
 
-Set secrets in [the SDK repository's Actions settings](https://github.com/jona62/TaskDaemon-Handlers/settings/secrets/actions), or use the interactive CLI without putting secret values in a command:
+Set secrets in [the SDK repository's Actions settings](https://github.com/jona62/taskdaemon-sdks/settings/secrets/actions), or use the interactive CLI without putting secret values in a command:
 
 ```bash
-gh secret set NPM_TOKEN --repo jona62/TaskDaemon-Handlers
-gh secret set CRATES_IO_TOKEN --repo jona62/TaskDaemon-Handlers
+gh secret set NPM_TOKEN --repo jona62/taskdaemon-sdks
+gh secret set CRATES_IO_TOKEN --repo jona62/taskdaemon-sdks
 ```
 
 Do not commit credentials or paste them into issue bodies, release notes, or chat. Repository secrets are available to the workflow's environments unless an environment-specific secret overrides them.
 
 ## Obtain the first-upload credentials
 
-Create or sign in to each registry account, then save its publishing credentials in [SDK repository Actions secrets](https://github.com/jona62/TaskDaemon-Handlers/settings/secrets/actions) using **New repository secret** and the exact names below. Use a short expiration for bootstrap tokens. Your account login passwords do not need to be stored in GitHub.
+Create or sign in to each registry account, then save its publishing credentials in [SDK repository Actions secrets](https://github.com/jona62/taskdaemon-sdks/settings/secrets/actions) using **New repository secret** and the exact names below. Use a short expiration for bootstrap tokens. Your account login passwords do not need to be stored in GitHub.
 
 ### npm: `NPM_TOKEN`
 
@@ -73,7 +73,7 @@ Official instructions: [Cargo publishing](https://doc.rust-lang.org/cargo/refere
 
 Sign in to [NuGet.org](https://www.nuget.org) or create an account. In the username menu, select **API Keys**, then **Create**. Choose **Push new packages and package versions**, restrict the package glob to `TaskDaemon.Handler`, and set an expiration. Create the key, use **Copy**, and paste it into `NUGET_API_KEY`. Permission to push only new versions is insufficient for the first package.
 
-For a token-free alternative, select **Trusted Publishing** in the username menu and add a GitHub policy with owner `jona62`, repository `TaskDaemon-Handlers`, workflow `publish-packages.yml`, environment `nuget`, new-package and new-version scopes, and package glob `TaskDaemon.Handler`. Save the NuGet profile username as the GitHub repository **variable** `NUGET_USER`, rather than as a secret or an email address.
+For a token-free alternative, select **Trusted Publishing** in the username menu and add a GitHub policy with owner `jona62`, repository `taskdaemon-sdks`, workflow `publish-packages.yml`, environment `nuget`, new-package and new-version scopes, and package glob `TaskDaemon.Handler`. Save the NuGet profile username as the GitHub repository **variable** `NUGET_USER`, rather than as a secret or an email address.
 
 Official instructions: [scoped API keys](https://learn.microsoft.com/en-us/nuget/nuget-org/scoped-api-keys), [trusted publishing](https://learn.microsoft.com/en-us/nuget/nuget-org/trusted-publishing).
 
@@ -94,8 +94,8 @@ Use the name/email you intend to associate publicly with the release. Set the fu
 TASKDAEMON_SIGNING_FINGERPRINT='YOUR_FULL_FINGERPRINT'
 gpg --keyserver hkps://keyserver.ubuntu.com --send-keys "$TASKDAEMON_SIGNING_FINGERPRINT"
 gpg --armor --export-secret-keys "$TASKDAEMON_SIGNING_FINGERPRINT" |
-  gh secret set MAVEN_GPG_KEY --repo jona62/TaskDaemon-Handlers
-gh secret set MAVEN_GPG_PASSPHRASE --repo jona62/TaskDaemon-Handlers
+  gh secret set MAVEN_GPG_KEY --repo jona62/taskdaemon-sdks
+gh secret set MAVEN_GPG_PASSPHRASE --repo jona62/taskdaemon-sdks
 ```
 
 The last command prompts for the key passphrase. Keep the original GnuPG key and its revocation certificate backed up; the pipeline does not write a private-key file into the repository. If selecting among multiple exported keys, also set `MAVEN_GPG_KEY_FINGERPRINT` to the full fingerprint. Check that a fresh keyring can retrieve the public key by its long key ID before uploading; keyserver propagation can temporarily prevent Central from validating signatures.
@@ -106,11 +106,11 @@ The Maven GPG plugin uses its BC signer, so the workflow does not need a GPG exe
 
 ## Publish a selected registry
 
-Once that registry's prerequisites are configured, select `main` in the [Publish packages workflow](https://github.com/jona62/TaskDaemon-Handlers/actions/workflows/publish-packages.yml). Choose one registry or `all` and version `0.1.2`. The workflow builds the selected version's immutable release tag rather than the branch's SDK source.
+Once that registry's prerequisites are configured, select `main` in the [Publish packages workflow](https://github.com/jona62/taskdaemon-sdks/actions/workflows/publish-packages.yml). Choose one registry or `all` and version `0.1.2`. The workflow builds the selected version's immutable release tag rather than the branch's SDK source.
 
 ```bash
 gh workflow run publish-packages.yml \
-  --repo jona62/TaskDaemon-Handlers --ref main \
+  --repo jona62/taskdaemon-sdks --ref main \
   -f registry=python -f version=0.1.2
 ```
 

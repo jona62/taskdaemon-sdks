@@ -17,8 +17,8 @@ The SDK requires Java 17 or later. Java package imports remain `com.taskdaemon`.
 For a local source build from the same release:
 
 ```bash
-git clone --branch v0.1.2 --depth 1 https://github.com/jona62/TaskDaemon-Handlers.git vendor/TaskDaemon-Handlers
-mvn -B -f vendor/TaskDaemon-Handlers/java/pom.xml clean install
+git clone --branch v0.1.2 --depth 1 https://github.com/jona62/taskdaemon-sdks.git vendor/taskdaemon-sdks
+mvn -B -f vendor/taskdaemon-sdks/java/pom.xml clean install
 ```
 
 For source-based Docker builds, install this pinned SDK in the builder before packaging your application.

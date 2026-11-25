@@ -2,7 +2,7 @@
   "name": "taskdaemon-handler",
   "version": "0.1.2",
   "description": "Header-only C++17 SDK for TaskDaemon JSON handlers",
-  "homepage": "https://github.com/jona62/TaskDaemon-Handlers",
+  "homepage": "https://github.com/jona62/taskdaemon-sdks",
   "license": "MIT",
   "dependencies": [
     "nlohmann-json",

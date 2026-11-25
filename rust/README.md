@@ -14,7 +14,7 @@ For a source installation, replace the crate dependency with the immutable relea
 
 ```toml
 [dependencies]
-taskdaemon-handler = { git = "https://github.com/jona62/TaskDaemon-Handlers.git", tag = "v0.1.2" }
+taskdaemon-handler = { git = "https://github.com/jona62/taskdaemon-sdks.git", tag = "v0.1.2" }
 serde = { version = "1", features = ["derive"] }
 ```
 

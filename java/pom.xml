@@ -11,7 +11,7 @@
 
     <name>TaskDaemon Handler SDK</name>
     <description>TaskDaemon handler SDK for Java</description>
-    <url>https://github.com/jona62/TaskDaemon-Handlers/tree/main/java</url>
+    <url>https://github.com/jona62/taskdaemon-sdks/tree/main/java</url>
 
     <licenses>
         <license>
@@ -28,9 +28,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/jona62/TaskDaemon-Handlers.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/jona62/TaskDaemon-Handlers.git</developerConnection>
-        <url>https://github.com/jona62/TaskDaemon-Handlers</url>
+        <connection>scm:git:https://github.com/jona62/taskdaemon-sdks.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/jona62/taskdaemon-sdks.git</developerConnection>
+        <url>https://github.com/jona62/taskdaemon-sdks</url>
     </scm>
 
     <properties>

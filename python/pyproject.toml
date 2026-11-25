@@ -23,9 +23,9 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jona62/TaskDaemon-Handlers"
-Repository = "https://github.com/jona62/TaskDaemon-Handlers"
-Source = "https://github.com/jona62/TaskDaemon-Handlers/tree/main/python"
+Homepage = "https://github.com/jona62/taskdaemon-sdks"
+Repository = "https://github.com/jona62/taskdaemon-sdks"
+Source = "https://github.com/jona62/taskdaemon-sdks/tree/main/python"
 Documentation = "https://taskdaemon.mintlify.app/"
 
 [tool.setuptools]

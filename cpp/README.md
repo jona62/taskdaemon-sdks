@@ -7,13 +7,13 @@ Header-only SDK using [nlohmann/json](https://github.com/nlohmann/json).
 ### Option 1: Direct Download
 
 ```bash
-curl -O https://raw.githubusercontent.com/jona62/TaskDaemon-Handlers/main/cpp/include/taskdaemon.hpp
+curl -O https://raw.githubusercontent.com/jona62/taskdaemon-sdks/main/cpp/include/taskdaemon.hpp
 ```
 
 ### Option 2: Git Submodule
 
 ```bash
-git submodule add https://github.com/jona62/TaskDaemon-Handlers.git libs/taskdaemon
+git submodule add https://github.com/jona62/taskdaemon-sdks.git libs/taskdaemon
 ```
 
 Then include: `#include "libs/taskdaemon/cpp/include/taskdaemon.hpp"`
@@ -24,7 +24,7 @@ Then include: `#include "libs/taskdaemon/cpp/include/taskdaemon.hpp"`
 include(FetchContent)
 FetchContent_Declare(
   taskdaemon
-  GIT_REPOSITORY https://github.com/jona62/TaskDaemon-Handlers.git
+  GIT_REPOSITORY https://github.com/jona62/taskdaemon-sdks.git
   GIT_TAG v0.1.2
   SOURCE_SUBDIR cpp
 )

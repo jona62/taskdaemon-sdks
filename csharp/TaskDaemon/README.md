@@ -16,4 +16,4 @@ Return `new Error("message", true)` when an error may be retried. The daemon's r
 
 `task.attempt` starts at 1 and increases on retries. Keep application logs on stderr; stdout carries protocol responses. Execution timeouts belong to the daemon configuration. An omitted handler timeout inherits `DAEMON_TASK_TIMEOUT`, whose default is 30 seconds.
 
-Source and examples: [TaskDaemon-Handlers](https://github.com/jona62/TaskDaemon-Handlers).
+Source and examples: [taskdaemon-sdks](https://github.com/jona62/taskdaemon-sdks).
