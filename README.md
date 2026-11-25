@@ -1,13 +1,21 @@
-# TaskDaemon Handler SDKs
+# TaskDaemon SDKs
 
-Native SDKs for building TaskDaemon handlers in any language.
+Handler SDKs for TaskDaemon in Python, Node.js, Go, Rust, Java, C# and C++
+
+## What it is
+
+A monorepo of client SDKs for writing TaskDaemon task handlers. Every SDK implements the same protocol, line-delimited JSON over stdin/stdout, with a `run(handler)` entry point plus `Task`, `Success` and `Error` types. The repository also holds the CI checks that build and test each SDK, the workflow that publishes versioned packages, and a vcpkg overlay for C++.
+
+## Stack
+
+Python, TypeScript/Node.js, Go, Rust, Java (Maven), C# (.NET), C++ (CMake, header-only), GitHub Actions.
 
 ## Installation
 
 Python `taskdaemon==0.1.0`, Go `v0.1.2`, npm `@taskdaemon/handler` 0.1.2, crates.io `taskdaemon-handler` 0.1.2, Maven Central `io.github.jona62:handler` 0.1.2, and NuGet `TaskDaemon.Handler` 0.1.2 are published and verified. For C++, clone the release source into your handler project's build context:
 
 ```bash
-git clone --branch v0.1.2 --depth 1 https://github.com/jona62/TaskDaemon-Handlers.git vendor/TaskDaemon-Handlers
+git clone --branch v0.1.2 --depth 1 https://github.com/jona62/taskdaemon-sdks.git vendor/taskdaemon-sdks
 ```
 
 | Language | Installation |
@@ -18,7 +26,7 @@ git clone --branch v0.1.2 --depth 1 https://github.com/jona62/TaskDaemon-Handler
 | Rust | `taskdaemon-handler = "=0.1.2"` in Cargo.toml; see [Rust](rust/README.md) |
 | Java | Add `io.github.jona62:handler:0.1.2` from Maven Central; see [Java](java/README.md) |
 | C# | `dotnet add handler/handler.csproj package TaskDaemon.Handler --version 0.1.2`; see [C#](csharp/README.md) |
-| C++ | Header-only: copy `vendor/TaskDaemon-Handlers/cpp/include/taskdaemon.hpp` |
+| C++ | Header-only: copy `vendor/taskdaemon-sdks/cpp/include/taskdaemon.hpp` |
 
 The published Python 0.1.0 package exports the `run` API used by these examples. Java uses Maven coordinate `io.github.jona62:handler:0.1.2` and package imports under `com.taskdaemon`.
 
@@ -91,9 +99,9 @@ Execution timeouts are configured in the daemon. Omit `timeout` in a handler's c
 - [C# SDK](csharp/README.md)
 - [C++ SDK](cpp/README.md)
 
-## SDK checks
+## Run it
 
-Run these checks from the repository root with the corresponding toolchain installed:
+Run the SDK checks from the repository root with the corresponding toolchain installed:
 
 ```bash
 python3 -m unittest discover -s python/tests -v
